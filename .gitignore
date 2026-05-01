@@ -1,0 +1,9 @@
+# Junk folders
+node_modules/
+dist/
+bin/
+
+# Files that add no benefit to the project
+*.ps1
+*.yaml
+*.yml
