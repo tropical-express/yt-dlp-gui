@@ -31,4 +31,52 @@ https://github.com/tropical-express/yt-dlp-gui/releases/latest
 
 # 🖼️ PREVIEW
 
-Add your screenshot here:
+![App Screenshot](assets/screenshot.png)
+
+⚙️ HOW IT WORKS
+1. Paste a video URL into the app
+2. The Electron frontend sends the request to the backend process
+3. yt-dlp fetches available formats
+4. ffmpeg merges video/audio if needed
+5. File is saved to your selected folder
+6. Progress updates are shown in real time
+
+📦 BUILD / DEVELOPMENT
+## Install dependencies
+``pnpm install``
+
+## Run in development mode
+``pnpm dev``
+
+## Build application
+``pnpm build``
+
+
+🧱 REQUIREMENTS
+
+
+Windows 10/11 (primary support)
+
+
+Node.js 18+
+
+
+pnpm
+
+
+yt-dlp installed or bundled
+
+
+ffmpeg installed or bundled
+
+
+
+⚠️ DISCLAIMER
+This tool is intended for educational and personal use only.
+Users are responsible for complying with the terms of service of any websites they download from.
+
+👤 AUTHOR
+Created by tropical-express
+
+
+
