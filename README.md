@@ -1,12 +1,15 @@
 # 🎬 YT-DLP GUI
-![GitHub release](https://img.shields.io/github/v/release/tropical-express/yt-dlp-gui)
-![GitHub downloads](https://img.shields.io/github/downloads/tropical-express/yt-dlp-gui/total)
-![GitHub license](https://img.shields.io/github/license/tropical-express/yt-dlp-gui)
-![GitHub stars](https://img.shields.io/github/stars/tropical-express/yt-dlp-gui)
-![GitHub forks](https://img.shields.io/github/forks/tropical-express/yt-dlp-gui)
-![Repo size](https://img.shields.io/github/repo-size/tropical-express/yt-dlp-gui)
+![Version](https://img.shields.io/github/v/release/tropical-express/yt-dlp-gui)
+![Downloads](https://img.shields.io/github/downloads/tropical-express/yt-dlp-gui/total)
+![License](https://img.shields.io/github/license/tropical-express/yt-dlp-gui)
+![Stars](https://img.shields.io/github/stars/tropical-express/yt-dlp-gui?style=social)
+![Forks](https://img.shields.io/github/forks/tropical-express/yt-dlp-gui?style=social)
+![Repo Size](https://img.shields.io/github/repo-size/tropical-express/yt-dlp-gui)
 ![Platform](https://img.shields.io/badge/platform-windows-blue)
 ![Electron](https://img.shields.io/badge/Electron-desktop_app-9feaf9?logo=electron&logoColor=black)
+![GitHub Release](https://img.shields.io/github/v/release/tropical-express/yt-dlp-gui)
+![GitHub Release Date](https://img.shields.io/github/release-date/tropical-express/yt-dlp-gui)
+![GitHub Last Commit](https://img.shields.io/github/last-commit/tropical-express/yt-dlp-gui)
 
 A simple desktop application built with Electron for downloading videos and audio using yt-dlp.
 
