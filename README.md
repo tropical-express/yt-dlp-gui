@@ -82,11 +82,11 @@ ffmpeg installed or bundled
 
 
 
-⚠️ DISCLAIMER
+## ⚠️ DISCLAIMER
 This tool is intended for educational and personal use only.
 Users are responsible for complying with the terms of service of any websites they download from.
 
-👤 AUTHOR
+## 👤 AUTHOR
 Created by tropical-express
 
 
