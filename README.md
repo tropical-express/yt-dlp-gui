@@ -43,7 +43,7 @@ https://github.com/tropical-express/yt-dlp-gui/releases/latest
 # 🖼️ PREVIEW
 
 ![App Screenshot](assets/screenshot.png)
-
+---
 ⚙️ HOW IT WORKS
 1. Paste a video URL into the app
 2. The Electron frontend sends the request to the backend process
