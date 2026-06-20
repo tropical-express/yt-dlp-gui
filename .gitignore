@@ -7,3 +7,7 @@ bin/
 *.ps1
 *.yaml
 *.yml
+
+# Source Archives
+*.tar
+*.tar.xz

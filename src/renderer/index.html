@@ -1,88 +1,343 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>yt-dlp GUI</title>
-  <style>
-    body {
-      font-family: Arial;
-      background: #121212;
-      color: white;
-      padding: 20px;
-      max-width: 600px;
-      margin: auto;
-    }
 
-    input, button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-    }
+<title>yt-dlp GUI</title>
 
-    button {
-      background: #2ecc71;
-      border: none;
-      color: white;
-      cursor: pointer;
-    }
+<style>
 
-    button:hover {
-      background: #27ae60;
-    }
+body{
+  font-family:Arial,sans-serif;
+  background:#111827;
+  color:white;
 
-    #progressBar {
-      width: 100%;
-      height: 20px;
-      background: #333;
-      margin-top: 15px;
-    }
+  display:flex;
+  justify-content:center;
+  align-items:center;
 
-    #progressFill {
-      height: 100%;
-      width: 0%;
-      background: #2ecc71;
-    }
+  min-height:100vh;
+  margin:0;
+}
 
-    #status {
-      margin-top: 10px;
-      font-weight: bold;
-    }
+.container{
 
-    #folder {
-      font-size: 12px;
-      color: #aaa;
-      margin-top: 5px;
-    }
+  width:650px;
 
-    #log {
-      margin-top: 10px;
-      height: 150px;
-      overflow: auto;
-      background: black;
-      padding: 10px;
-      font-size: 12px;
-    }
-  </style>
+  background:#1f2937;
+
+  border-radius:18px;
+
+  padding:30px;
+
+  box-shadow:
+  0 10px 30px rgba(0,0,0,.4);
+}
+
+.header{
+
+  text-align:center;
+  margin-bottom:25px;
+}
+
+.logo{
+
+  font-size:55px;
+}
+
+h1{
+
+  margin:10px 0 5px;
+}
+
+.subtitle{
+
+  color:#9ca3af;
+}
+
+label{
+
+  display:block;
+  margin-bottom:8px;
+}
+
+input,select{
+
+  width:100%;
+
+  padding:14px;
+
+  border:none;
+
+  border-radius:10px;
+
+  background:#374151;
+
+  color:white;
+
+  font-size:16px;
+
+  box-sizing:border-box;
+}
+
+input:focus,
+select:focus{
+
+  outline:2px solid #22c55e;
+}
+
+.buttonRow{
+
+  display:flex;
+
+  gap:10px;
+
+  margin-top:18px;
+}
+
+button{
+
+  flex:1;
+
+  padding:14px;
+
+  border:none;
+
+  border-radius:10px;
+
+  font-size:16px;
+
+  cursor:pointer;
+
+  transition:.2s;
+}
+
+.folderBtn{
+
+  background:#3b82f6;
+}
+
+.downloadBtn{
+
+  background:#22c55e;
+}
+
+button:hover{
+
+  transform:translateY(-2px);
+}
+
+#folder{
+
+  margin-top:10px;
+
+  color:#9ca3af;
+
+  overflow:hidden;
+
+  text-overflow:ellipsis;
+
+  white-space:nowrap;
+}
+
+#progressContainer{
+
+  margin-top:25px;
+}
+
+.progressInfo{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  margin-bottom:8px;
+}
+
+#progressBar{
+
+  width:100%;
+
+  height:18px;
+
+  background:#374151;
+
+  border-radius:50px;
+
+  overflow:hidden;
+}
+
+#progressFill{
+
+  width:0%;
+
+  height:100%;
+
+  background:#22c55e;
+
+  transition:width .2s;
+}
+
+#status{
+
+  margin-top:12px;
+
+  padding:8px 12px;
+
+  background:#374151;
+
+  border-radius:10px;
+
+  display:inline-block;
+}
+
+#log{
+
+  margin-top:20px;
+
+  background:#0f172a;
+
+  height:170px;
+
+  overflow:auto;
+
+  padding:15px;
+
+  border-radius:10px;
+
+  font-family:monospace;
+
+  font-size:13px;
+}
+
+.footer{
+
+  text-align:center;
+
+  margin-top:20px;
+
+  color:#6b7280;
+
+  font-size:12px;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<h2>yt-dlp GUI</h2>
+<div class="container">
 
-<input id="url" placeholder="Paste video URL" />
+<div class="header">
 
-<button onclick="pickFolder()">Choose Download Folder</button>
-<div id="folder">No folder selected</div>
+<div class="logo">⬇️</div>
 
-<button onclick="startDownload()">Download</button>
+<h1>yt-dlp GUI</h1>
 
-<div id="progressBar">
-  <div id="progressFill"></div>
+<div class="subtitle">
+Simple video downloader
 </div>
 
-<div id="status">Idle</div>
+</div>
 
-<div id="log"></div>
+<label>Video URL</label>
 
-<script src="renderer.js"></script>
+<input
+id="url"
+placeholder="https://youtube.com/watch?v=..."
+>
+
+<label style="margin-top:20px;">
+Quality
+</label>
+
+<select id="quality">
+
+<option value="best">
+Best Quality
+</option>
+
+<option value="1080">
+1080p
+</option>
+
+<option value="720">
+720p
+</option>
+
+<option value="audio">
+Audio Only
+</option>
+
+</select>
+
+<div class="buttonRow">
+
+<button
+class="folderBtn"
+onclick="pickFolder()"
+>
+
+📁 Choose Folder
+
+</button>
+
+<button
+class="downloadBtn"
+onclick="startDownload()"
+>
+
+⬇ Download
+
+</button>
+
+</div>
+
+<div id="folder">
+
+No folder selected
+
+</div>
+
+<div id="progressContainer">
+
+<div class="progressInfo">
+
+<span>Progress</span>
+
+<span id="percent">
+0%
+</span>
+
+</div>
+
+<div id="progressBar">
+
+<div id="progressFill"></div>
+
+</div>
+
+</div>
+
+<div id="status">
+
+🟡 Idle
+
+</div>
+
+<div id="log">
+
+Ready.
+
+</div>
+
+<div class="footer">
+
+yt-dlp GUI • Electron App
+
+</div>
+
+</div>
+
 </body>
 </html>
