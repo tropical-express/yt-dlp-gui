@@ -5,8 +5,7 @@ bin/
 
 # Files that add no benefit to the project
 *.ps1
-*.yaml
-*.yml
+pnpm-workspace.yaml
 
 # Source Archives
 *.tar
